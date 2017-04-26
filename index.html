@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>弹出层插件</title>
-    <link rel="stylesheet" type="text/css" href="css/hunterPopup.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-</head>
-<body>
-<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-popup.js"></script>
-<script>
-	$().ready(function(e) {
 
-        var popupEvent = function(){
-			
-		}
+    <head>
+        <meta charset="UTF-8">
+        <title>弹出层插件</title>
+        <link rel="stylesheet" type="text/css" href="css/hunterPopup.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    </head>
 
-		$('.popup-div').hunterPopup({
-			width: '320px',
-			height:'320px',
-			title:"这里是我传入的标题...",
-			content:$('#tableContent'),
-			event:popupEvent
-		});
+    <body>
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery-popup.js"></script>
+        <script>
+            $().ready(function(e) {
 
-	});
-</script>
+                var popupEvent = function() {
+                    //弹出层中的事件
+                }
 
-<input type="text" class="popup-div" name="1" readonly value="2" style="margin: 134px 0 0 100px;">
+                $('#popupReturn').hunterPopup({
+                    width: '320px',
+                    height: '200px',
+                    title: "这里是我传入的标题...",
+                    content: $('#tableContent'),
+                    event: popupEvent
+                });
 
-<div id="tableContent" style="display:none">
-	<div>
-		<div class="panel panel-default">
-			<div class="panel-heading">一排</div>
-			<div class="panel-body form-inline dept1">
-				<a class="btn btn-default" id="001">张三1</a>
-				<a class="btn btn-default" id="002">李四1</a>
-				<a class="btn btn-default" id="003">王五1</a>
-				<a class="btn btn-default" id="004">赵六1</a>
-		  </div>
-		</div>
-        <div class="panel panel-default">
-			<div class="panel-heading">二排</div>
-			<div class="panel-body form-inline">
-				<a class="btn btn-default 011" id="011">张三2</a>
-				<a class="btn btn-default 012" id="012">李四2</a>
-				<a class="btn btn-default 013" id="013">王五2</a>
-				<a class="btn btn-default 014" id="014">赵六2</a>
-		  </div>
-		</div>
-	</div>
-</div>
+            });
+        </script>
 
-</body>
+        <input type="button" id="popupReturn" value="点击弹出层" style="margin: 20px 0 0 20px;">
+
+        <div id="tableContent" style="display:none">
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">一排</div>
+                    <div class="panel-body form-inline dept1">
+                        <a class="btn btn-default" id="001">张三1</a>
+                        <a class="btn btn-default" id="002">李四1</a>
+                        <a class="btn btn-default" id="003">王五1</a>
+                        <a class="btn btn-default" id="004">赵六1</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
 </html>
